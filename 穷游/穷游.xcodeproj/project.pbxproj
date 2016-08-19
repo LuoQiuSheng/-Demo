@@ -72,6 +72,7 @@
 		10DC81121D66DA2100B2108D /* CommunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityViewController.m; sourceTree = "<group>"; };
 		10DC81141D66DA3100B2108D /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		10DC81151D66DA3100B2108D /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		10DC81171D66FD7A00B2108D /* ClassLibraries.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassLibraries.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				105FC8BD1D65B6D9002AB976 /* main.m */,
+				10DC81171D66FD7A00B2108D /* ClassLibraries.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
