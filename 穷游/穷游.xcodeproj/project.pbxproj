@@ -9,12 +9,19 @@
 /* Begin PBXBuildFile section */
 		105FC8BE1D65B6D9002AB976 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8BD1D65B6D9002AB976 /* main.m */; };
 		105FC8C11D65B6D9002AB976 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8C01D65B6D9002AB976 /* AppDelegate.m */; };
-		105FC8C41D65B6D9002AB976 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8C31D65B6D9002AB976 /* ViewController.m */; };
 		105FC8C71D65B6D9002AB976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105FC8C51D65B6D9002AB976 /* Main.storyboard */; };
 		105FC8C91D65B6D9002AB976 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105FC8C81D65B6D9002AB976 /* Assets.xcassets */; };
 		105FC8CC1D65B6D9002AB976 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105FC8CA1D65B6D9002AB976 /* LaunchScreen.storyboard */; };
 		105FC8D71D65B6D9002AB976 /* __Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8D61D65B6D9002AB976 /* __Tests.m */; };
 		105FC8E21D65B6D9002AB976 /* __UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8E11D65B6D9002AB976 /* __UITests.m */; };
+		10DC81001D66D8FC00B2108D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC80FF1D66D8FC00B2108D /* BaseViewController.m */; };
+		10DC81031D66D92900B2108D /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81021D66D92900B2108D /* RootTabBarViewController.m */; };
+		10DC81061D66D94800B2108D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81051D66D94800B2108D /* BaseNavigationController.m */; };
+		10DC810A1D66D9B300B2108D /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81091D66D9B300B2108D /* RecommendViewController.m */; };
+		10DC810D1D66D9DC00B2108D /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC810C1D66D9DC00B2108D /* DestinationViewController.m */; };
+		10DC81101D66DA0400B2108D /* TravelMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC810F1D66DA0400B2108D /* TravelMallViewController.m */; };
+		10DC81131D66DA2100B2108D /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81121D66DA2100B2108D /* CommunityViewController.m */; };
+		10DC81161D66DA3100B2108D /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81151D66DA3100B2108D /* MineViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +46,6 @@
 		105FC8BD1D65B6D9002AB976 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		105FC8BF1D65B6D9002AB976 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		105FC8C01D65B6D9002AB976 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		105FC8C21D65B6D9002AB976 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		105FC8C31D65B6D9002AB976 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		105FC8C61D65B6D9002AB976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		105FC8C81D65B6D9002AB976 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105FC8CB1D65B6D9002AB976 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +56,22 @@
 		105FC8DD1D65B6D9002AB976 /* 穷游UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "穷游UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		105FC8E11D65B6D9002AB976 /* __UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = __UITests.m; sourceTree = "<group>"; };
 		105FC8E31D65B6D9002AB976 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10DC80FE1D66D8FC00B2108D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		10DC80FF1D66D8FC00B2108D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		10DC81011D66D92900B2108D /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
+		10DC81021D66D92900B2108D /* RootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarViewController.m; sourceTree = "<group>"; };
+		10DC81041D66D94800B2108D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		10DC81051D66D94800B2108D /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		10DC81081D66D9B300B2108D /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		10DC81091D66D9B300B2108D /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		10DC810B1D66D9DC00B2108D /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
+		10DC810C1D66D9DC00B2108D /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
+		10DC810E1D66DA0400B2108D /* TravelMallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelMallViewController.h; sourceTree = "<group>"; };
+		10DC810F1D66DA0400B2108D /* TravelMallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelMallViewController.m; sourceTree = "<group>"; };
+		10DC81111D66DA2100B2108D /* CommunityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityViewController.h; sourceTree = "<group>"; };
+		10DC81121D66DA2100B2108D /* CommunityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityViewController.m; sourceTree = "<group>"; };
+		10DC81141D66DA3100B2108D /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		10DC81151D66DA3100B2108D /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +124,10 @@
 			children = (
 				105FC8BF1D65B6D9002AB976 /* AppDelegate.h */,
 				105FC8C01D65B6D9002AB976 /* AppDelegate.m */,
-				105FC8C21D65B6D9002AB976 /* ViewController.h */,
-				105FC8C31D65B6D9002AB976 /* ViewController.m */,
+				10DC81071D66D97400B2108D /* ViewControllers */,
+				10DC80FD1D66D88B00B2108D /* BaseNavigationController */,
+				10DC80FC1D66D88100B2108D /* BaseViewController */,
+				10DC80FB1D66D87100B2108D /* TabBarController */,
 				105FC8C51D65B6D9002AB976 /* Main.storyboard */,
 				105FC8C81D65B6D9002AB976 /* Assets.xcassets */,
 				105FC8CA1D65B6D9002AB976 /* LaunchScreen.storyboard */,
@@ -138,6 +161,50 @@
 				105FC8E31D65B6D9002AB976 /* Info.plist */,
 			);
 			path = "穷游UITests";
+			sourceTree = "<group>";
+		};
+		10DC80FB1D66D87100B2108D /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				10DC81011D66D92900B2108D /* RootTabBarViewController.h */,
+				10DC81021D66D92900B2108D /* RootTabBarViewController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		10DC80FC1D66D88100B2108D /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				10DC80FE1D66D8FC00B2108D /* BaseViewController.h */,
+				10DC80FF1D66D8FC00B2108D /* BaseViewController.m */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		10DC80FD1D66D88B00B2108D /* BaseNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				10DC81041D66D94800B2108D /* BaseNavigationController.h */,
+				10DC81051D66D94800B2108D /* BaseNavigationController.m */,
+			);
+			name = BaseNavigationController;
+			sourceTree = "<group>";
+		};
+		10DC81071D66D97400B2108D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				10DC81081D66D9B300B2108D /* RecommendViewController.h */,
+				10DC81091D66D9B300B2108D /* RecommendViewController.m */,
+				10DC810B1D66D9DC00B2108D /* DestinationViewController.h */,
+				10DC810C1D66D9DC00B2108D /* DestinationViewController.m */,
+				10DC810E1D66DA0400B2108D /* TravelMallViewController.h */,
+				10DC810F1D66DA0400B2108D /* TravelMallViewController.m */,
+				10DC81111D66DA2100B2108D /* CommunityViewController.h */,
+				10DC81121D66DA2100B2108D /* CommunityViewController.m */,
+				10DC81141D66DA3100B2108D /* MineViewController.h */,
+				10DC81151D66DA3100B2108D /* MineViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +339,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105FC8C41D65B6D9002AB976 /* ViewController.m in Sources */,
+				10DC81031D66D92900B2108D /* RootTabBarViewController.m in Sources */,
+				10DC81131D66DA2100B2108D /* CommunityViewController.m in Sources */,
+				10DC810A1D66D9B300B2108D /* RecommendViewController.m in Sources */,
+				10DC81061D66D94800B2108D /* BaseNavigationController.m in Sources */,
+				10DC81161D66DA3100B2108D /* MineViewController.m in Sources */,
+				10DC81001D66D8FC00B2108D /* BaseViewController.m in Sources */,
 				105FC8C11D65B6D9002AB976 /* AppDelegate.m in Sources */,
+				10DC81101D66DA0400B2108D /* TravelMallViewController.m in Sources */,
 				105FC8BE1D65B6D9002AB976 /* main.m in Sources */,
+				10DC810D1D66D9DC00B2108D /* DestinationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
