@@ -1,34 +1,22 @@
 //
-//  RecommendViewController.m
+//  RegisterViewController.m
 //  穷游
 //
-//  Created by 罗秋生 on 16/8/19.
+//  Created by 罗秋生 on 16/8/22.
 //  Copyright © 2016年 罗秋生. All rights reserved.
 //
 
-#import "RecommendViewController.h"
+#import "RegisterViewController.h"
 
-@interface RecommendViewController ()
-
-@property (nonatomic, strong) UITableView *recommendTableView;
+@interface RegisterViewController ()
 
 @end
 
-@implementation RecommendViewController
-
-/**
- *  懒加载控件
- */
-
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initializationNavigation];
-}
-
-- (void)initializationNavigation {
-    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

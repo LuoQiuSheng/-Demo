@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1056A2491D6AF8880070486F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056A2481D6AF8880070486F /* LoginViewController.m */; };
+		1056A24C1D6AF8940070486F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056A24B1D6AF8940070486F /* RegisterViewController.m */; };
 		105FC8BE1D65B6D9002AB976 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8BD1D65B6D9002AB976 /* main.m */; };
 		105FC8C11D65B6D9002AB976 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8C01D65B6D9002AB976 /* AppDelegate.m */; };
 		105FC8C71D65B6D9002AB976 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105FC8C51D65B6D9002AB976 /* Main.storyboard */; };
@@ -42,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1056A2471D6AF8880070486F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1056A2481D6AF8880070486F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		1056A24A1D6AF8940070486F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		1056A24B1D6AF8940070486F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		105FC8B91D65B6D9002AB976 /* 穷游.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "穷游.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		105FC8BD1D65B6D9002AB976 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		105FC8BF1D65B6D9002AB976 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,6 +106,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1056A2461D6AF85F0070486F /* LoginAndRegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1056A2471D6AF8880070486F /* LoginViewController.h */,
+				1056A2481D6AF8880070486F /* LoginViewController.m */,
+				1056A24A1D6AF8940070486F /* RegisterViewController.h */,
+				1056A24B1D6AF8940070486F /* RegisterViewController.m */,
+			);
+			name = LoginAndRegisterViewController;
+			sourceTree = "<group>";
+		};
 		105FC8B01D65B6D9002AB976 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +142,7 @@
 			children = (
 				105FC8BF1D65B6D9002AB976 /* AppDelegate.h */,
 				105FC8C01D65B6D9002AB976 /* AppDelegate.m */,
+				1056A2461D6AF85F0070486F /* LoginAndRegisterViewController */,
 				10DC81071D66D97400B2108D /* ViewControllers */,
 				10DC80FD1D66D88B00B2108D /* BaseNavigationController */,
 				10DC80FC1D66D88100B2108D /* BaseViewController */,
@@ -349,8 +367,10 @@
 				10DC81161D66DA3100B2108D /* MineViewController.m in Sources */,
 				10DC81001D66D8FC00B2108D /* BaseViewController.m in Sources */,
 				105FC8C11D65B6D9002AB976 /* AppDelegate.m in Sources */,
+				1056A24C1D6AF8940070486F /* RegisterViewController.m in Sources */,
 				10DC81101D66DA0400B2108D /* TravelMallViewController.m in Sources */,
 				105FC8BE1D65B6D9002AB976 /* main.m in Sources */,
+				1056A2491D6AF8880070486F /* LoginViewController.m in Sources */,
 				10DC810D1D66D9DC00B2108D /* DestinationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
