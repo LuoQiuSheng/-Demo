@@ -19,16 +19,43 @@
 /**
  *  懒加载控件
  */
-
+- (UITableView *)recommendTableView {
+    if (!_recommendTableView) {
+        _recommendTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _recommendTableView.showsVerticalScrollIndicator = NO;
+        _recommendTableView.showsHorizontalScrollIndicator = NO;
+    }
+    return _recommendTableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self initializationNavigation];
+    [self initializeNavigation];
+    [self initializeDataSource];
+    [self initializeUIInterface];
 }
 
-- (void)initializationNavigation {
+/**
+ *  初始化导航栏
+ */
+- (void)initializeNavigation {
     self.navigationController.navigationBarHidden = YES;
+}
+
+/**
+ *  初始化数据源
+ */
+- (void)initializeDataSource {
+    
+}
+
+/**
+ *  初始化UI界面
+ */
+- (void)initializeUIInterface {
+    
+    [self.view addSubview:self.recommendTableView];
 }
 
 - (void)didReceiveMemoryWarning {

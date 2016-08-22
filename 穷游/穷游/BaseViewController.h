@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ClassLibraries.pch"
 
 @interface BaseViewController : UIViewController
 
