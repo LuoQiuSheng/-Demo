@@ -276,6 +276,7 @@
 				TargetAttributes = {
 					105FC8B81D65B6D9002AB976 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VPFNK6F84G;
 					};
 					105FC8D11D65B6D9002AB976 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -495,6 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "穷游/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Estrongersoft-Co.--LTD.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "穷游/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Estrongersoft-Co.--LTD.--";
 				PRODUCT_NAME = "$(TARGET_NAME)";
