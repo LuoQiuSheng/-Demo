@@ -8,13 +8,22 @@
 
 #import "RecommendViewController.h"
 /**
+ *  CELL
+ */
+#import "RecommendTableViewCell.h"
+/**
  *  Third Part Library
  */
 #import "PureLayout.h" // AUTOLAYOUT
+/**
+ *  宏定义
+ */
+#define RECOMMENDCELL @"recommendCell"
 
-@interface RecommendViewController ()
+@interface RecommendViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *recommendTableView;
+@property (nonatomic, strong) UITableView    *recommendTableView;
+@property (nonatomic, strong) NSMutableArray *recommendArray;    // 数据源
 
 @end
 
@@ -28,6 +37,8 @@
         _recommendTableView = [[UITableView alloc] initForAutoLayout];
         _recommendTableView.showsVerticalScrollIndicator = NO;
         _recommendTableView.showsHorizontalScrollIndicator = NO;
+        _recommendTableView.delegate = self;
+        _recommendTableView.dataSource = self;
     }
     return _recommendTableView;
 }
@@ -37,6 +48,8 @@
     // Do any additional setup after loading the view.
     [self initializeNavigation];
     [self initializeDataSource];
+    [self getDataFromNetwork];
+    [self registerUITableViewCell];
     [self initializeUIInterface];
 }
 
@@ -55,6 +68,20 @@
 }
 
 /**
+ *  获取网络数据
+ */
+- (void)getDataFromNetwork {
+    
+}
+
+/**
+ *  注册UITableViweCell
+ */
+- (void)registerUITableViewCell {
+    [self.recommendTableView registerNib:[UINib nibWithNibName:@"RecommendTableViewCell" bundle:nil] forCellReuseIdentifier:RECOMMENDCELL];
+}
+
+/**
  *  初始化UI界面
  */
 - (void)initializeUIInterface {
@@ -64,6 +91,20 @@
     [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
     [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+}
+
+/**
+ *  UITableViewDataSource
+ */
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section; {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath; {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//    return cell;
+    RecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RECOMMENDCELL];
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
