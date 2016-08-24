@@ -23,7 +23,7 @@
 @interface RecommendViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView    *recommendTableView;
-@property (nonatomic, strong) NSMutableArray *recommendArray;    // 数据源
+@property (nonatomic, strong) NSMutableArray *recommendArray;     // 数据源
 
 @end
 
