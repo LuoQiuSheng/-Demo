@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		103B95FA1D6D7FD900971170 /* RecommendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 103B95F91D6D7FD900971170 /* RecommendTableViewCell.m */; };
 		103B96011D6D948200971170 /* HTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 103B96001D6D948200971170 /* HTTPRequestManager.m */; };
+		103B96061D6DB59100971170 /* RecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 103B96051D6DB59100971170 /* RecommendModel.m */; };
 		1056A2491D6AF8880070486F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056A2481D6AF8880070486F /* LoginViewController.m */; };
 		1056A24C1D6AF8940070486F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1056A24B1D6AF8940070486F /* RegisterViewController.m */; };
 		105FC8BE1D65B6D9002AB976 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8BD1D65B6D9002AB976 /* main.m */; };
@@ -52,6 +53,8 @@
 		103B95FF1D6D948200971170 /* HTTPRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestManager.h; sourceTree = "<group>"; };
 		103B96001D6D948200971170 /* HTTPRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestManager.m; sourceTree = "<group>"; };
 		103B96021D6D9F1200971170 /* NetworkInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkInterface.h; sourceTree = "<group>"; };
+		103B96041D6DB59100971170 /* RecommendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendModel.h; sourceTree = "<group>"; };
+		103B96051D6DB59100971170 /* RecommendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendModel.m; sourceTree = "<group>"; };
 		1056A2471D6AF8880070486F /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1056A2481D6AF8880070486F /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1056A24A1D6AF8940070486F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		103B95F61D6D7EE000971170 /* RecommendViewController */ = {
 			isa = PBXGroup;
 			children = (
+				103B96031D6DB55700971170 /* Model */,
 				103B95F71D6D7FB100971170 /* Cell */,
 			);
 			name = RecommendViewController;
@@ -150,6 +154,15 @@
 				103B96001D6D948200971170 /* HTTPRequestManager.m */,
 			);
 			name = Manager;
+			sourceTree = "<group>";
+		};
+		103B96031D6DB55700971170 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				103B96041D6DB59100971170 /* RecommendModel.h */,
+				103B96051D6DB59100971170 /* RecommendModel.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		1056A2461D6AF85F0070486F /* LoginAndRegisterViewController */ = {
@@ -473,6 +486,7 @@
 			files = (
 				10DC81031D66D92900B2108D /* RootTabBarViewController.m in Sources */,
 				10DC81131D66DA2100B2108D /* CommunityViewController.m in Sources */,
+				103B96061D6DB59100971170 /* RecommendModel.m in Sources */,
 				10DC810A1D66D9B300B2108D /* RecommendViewController.m in Sources */,
 				10DC81061D66D94800B2108D /* BaseNavigationController.m in Sources */,
 				10DC81161D66DA3100B2108D /* MineViewController.m in Sources */,

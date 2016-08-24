@@ -29,7 +29,12 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSData *data             = [NSJSONSerialization dataWithJSONObject:responseObject
+                                                                   options:NSJSONWritingPrettyPrinted
+                                                                     error:nil];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                   options:NSJSONReadingMutableContainers
+                                                                     error:nil];
         success(self, dictionary);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -46,7 +51,12 @@
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+        NSData *data             = [NSJSONSerialization dataWithJSONObject:responseObject
+                                                                   options:NSJSONWritingPrettyPrinted
+                                                                     error:nil];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                   options:NSJSONReadingMutableContainers
+                                                                     error:nil];
         success(self, dictionary);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

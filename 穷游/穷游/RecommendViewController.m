@@ -15,6 +15,10 @@
  *  宏定义
  */
 #define RECOMMENDCELL @"recommendCell"
+/**
+ *  MODEL
+ */
+#import "RecommendModel.h"
 
 @interface RecommendViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -65,17 +69,26 @@
 #pragma mark 获取网络数据
 - (void)getDataFromNetwork {
     
-    [[HTTPRequestManager shareIntance] GETDataFromNetworkWithURL:RECOMMENDVIEWCONTROLLER andPage:1 andSuccess:^(HTTPRequestManager *manager, id model) {
+    [[HTTPRequestManager shareIntance] GETDataFromNetworkWithURL:RECOMMENDVIEWCONTROLLER
+                                                         andPage:1
+                                                      andSuccess:^(HTTPRequestManager *manager, id model) {
+        
+        RecommendModel *recommentModel = [MTLJSONAdapter modelOfClass:[RecommendModel class]
+                                                   fromJSONDictionary:model
+                                                                error:nil];
+        NSLog(@"%@",recommentModel);
         
     } andFailed:^(HTTPRequestManager *manager, id model) {
         
+        NSLog(@"recomment view controller error:%@",[model localizedDescription]);
     }];
 }
 
 #pragma mark 注册UITableViweCell
 - (void)registerUITableViewCell {
     
-    [self.recommendTableView registerClass:[RecommendTableViewCell class] forCellReuseIdentifier:RECOMMENDCELL];
+    [self.recommendTableView registerClass:[RecommendTableViewCell class]
+                    forCellReuseIdentifier:RECOMMENDCELL];
 }
 
 #pragma mark 初始化UI界面

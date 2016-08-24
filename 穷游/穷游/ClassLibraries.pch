@@ -22,6 +22,7 @@
  */
 #import "PureLayout.h"      // AUTO LAYOUT
 #import "AFNetworking.h"    // REQUEST DATA
+#import "Mantle.h"          // JSON CHANGE INTO MODEL
 /**
  *  Request URL
  */
