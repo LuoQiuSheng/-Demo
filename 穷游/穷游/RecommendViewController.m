@@ -65,6 +65,11 @@
 #pragma mark 获取网络数据
 - (void)getDataFromNetwork {
     
+    [[HTTPRequestManager shareIntance] GETDataFromNetworkWithURL:RECOMMENDVIEWCONTROLLER andPage:1 andSuccess:^(HTTPRequestManager *manager, id model) {
+        
+    } andFailed:^(HTTPRequestManager *manager, id model) {
+        
+    }];
 }
 
 #pragma mark 注册UITableViweCell
