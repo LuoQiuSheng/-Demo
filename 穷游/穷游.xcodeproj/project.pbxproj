@@ -24,6 +24,7 @@
 		10DC81101D66DA0400B2108D /* TravelMallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC810F1D66DA0400B2108D /* TravelMallViewController.m */; };
 		10DC81131D66DA2100B2108D /* CommunityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81121D66DA2100B2108D /* CommunityViewController.m */; };
 		10DC81161D66DA3100B2108D /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81151D66DA3100B2108D /* MineViewController.m */; };
+		740C416C9C223F0CE040A2B3 /* libPods-穷游.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 359ECFB81BE24FDD3C16868D /* libPods-穷游.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,9 @@
 		10DC81141D66DA3100B2108D /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		10DC81151D66DA3100B2108D /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		10DC81171D66FD7A00B2108D /* ClassLibraries.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassLibraries.pch; sourceTree = "<group>"; };
+		1E4564E15CF775A68F211AF3 /* Pods-穷游.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-穷游.release.xcconfig"; path = "Pods/Target Support Files/Pods-穷游/Pods-穷游.release.xcconfig"; sourceTree = "<group>"; };
+		359ECFB81BE24FDD3C16868D /* libPods-穷游.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-穷游.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		361A7A128A68C965DD4A4B95 /* Pods-穷游.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-穷游.debug.xcconfig"; path = "Pods/Target Support Files/Pods-穷游/Pods-穷游.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740C416C9C223F0CE040A2B3 /* libPods-穷游.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05C8C822A381E0C5A8DF0447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				359ECFB81BE24FDD3C16868D /* libPods-穷游.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1056A2461D6AF85F0070486F /* LoginAndRegisterViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,8 @@
 				105FC8D51D65B6D9002AB976 /* 穷游Tests */,
 				105FC8E01D65B6D9002AB976 /* 穷游UITests */,
 				105FC8BA1D65B6D9002AB976 /* Products */,
+				55A5D8526B5909ED0C3E1DAB /* Pods */,
+				05C8C822A381E0C5A8DF0447 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +242,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		55A5D8526B5909ED0C3E1DAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				361A7A128A68C965DD4A4B95 /* Pods-穷游.debug.xcconfig */,
+				1E4564E15CF775A68F211AF3 /* Pods-穷游.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105FC8E61D65B6D9002AB976 /* Build configuration list for PBXNativeTarget "穷游" */;
 			buildPhases = (
+				93A47ABA40649273AF331F44 /* [CP] Check Pods Manifest.lock */,
 				105FC8B51D65B6D9002AB976 /* Sources */,
 				105FC8B61D65B6D9002AB976 /* Frameworks */,
 				105FC8B71D65B6D9002AB976 /* Resources */,
+				236DEE1B237CEDD3066CB940 /* [CP] Embed Pods Frameworks */,
+				86C0CCBF104298612035F428 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -354,6 +381,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		236DEE1B237CEDD3066CB940 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-穷游/Pods-穷游-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86C0CCBF104298612035F428 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-穷游/Pods-穷游-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93A47ABA40649273AF331F44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		105FC8B51D65B6D9002AB976 /* Sources */ = {
@@ -512,6 +587,7 @@
 		};
 		105FC8E71D65B6D9002AB976 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 361A7A128A68C965DD4A4B95 /* Pods-穷游.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -525,6 +601,7 @@
 		};
 		105FC8E81D65B6D9002AB976 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E4564E15CF775A68F211AF3 /* Pods-穷游.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

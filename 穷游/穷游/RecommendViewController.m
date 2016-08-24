@@ -7,6 +7,10 @@
 //
 
 #import "RecommendViewController.h"
+/**
+ *  Third Part Library
+ */
+#import "PureLayout.h" // AUTOLAYOUT
 
 @interface RecommendViewController ()
 
@@ -21,7 +25,7 @@
  */
 - (UITableView *)recommendTableView {
     if (!_recommendTableView) {
-        _recommendTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
+        _recommendTableView = [[UITableView alloc] initForAutoLayout];
         _recommendTableView.showsVerticalScrollIndicator = NO;
         _recommendTableView.showsHorizontalScrollIndicator = NO;
     }
@@ -40,7 +44,7 @@
  *  初始化导航栏
  */
 - (void)initializeNavigation {
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 }
 
 /**
@@ -56,6 +60,10 @@
 - (void)initializeUIInterface {
     
     [self.view addSubview:self.recommendTableView];
+    [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+    [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+    [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+    [_recommendTableView autoPinEdgeToSuperviewEdge:ALEdgeRight];
 }
 
 - (void)didReceiveMemoryWarning {
