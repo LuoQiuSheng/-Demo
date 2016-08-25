@@ -21,6 +21,7 @@
 		105FC8E21D65B6D9002AB976 /* __UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 105FC8E11D65B6D9002AB976 /* __UITests.m */; };
 		10900C791D6EC5E40077A594 /* AdBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10900C781D6EC5E40077A594 /* AdBannerView.m */; };
 		10900C7D1D6ECBF60077A594 /* AdDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10900C7C1D6ECBF60077A594 /* AdDetailViewController.m */; };
+		10900C811D6EE2F00077A594 /* RGBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10900C801D6EE2F00077A594 /* RGBColor.m */; };
 		10DC81001D66D8FC00B2108D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC80FF1D66D8FC00B2108D /* BaseViewController.m */; };
 		10DC81031D66D92900B2108D /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81021D66D92900B2108D /* RootTabBarViewController.m */; };
 		10DC81061D66D94800B2108D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10DC81051D66D94800B2108D /* BaseNavigationController.m */; };
@@ -79,6 +80,8 @@
 		10900C781D6EC5E40077A594 /* AdBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdBannerView.m; sourceTree = "<group>"; };
 		10900C7B1D6ECBF60077A594 /* AdDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdDetailViewController.h; sourceTree = "<group>"; };
 		10900C7C1D6ECBF60077A594 /* AdDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdDetailViewController.m; sourceTree = "<group>"; };
+		10900C7F1D6EE2F00077A594 /* RGBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGBColor.h; sourceTree = "<group>"; };
+		10900C801D6EE2F00077A594 /* RGBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGBColor.m; sourceTree = "<group>"; };
 		10DC80FE1D66D8FC00B2108D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		10DC80FF1D66D8FC00B2108D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		10DC81011D66D92900B2108D /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 			children = (
 				105FC8BF1D65B6D9002AB976 /* AppDelegate.h */,
 				105FC8C01D65B6D9002AB976 /* AppDelegate.m */,
+				10900C7E1D6EE2D40077A594 /* Frameworks */,
 				103B95FB1D6D934800971170 /* Manager */,
 				103B95F61D6D7EE000971170 /* RecommendViewController */,
 				1056A2461D6AF85F0070486F /* LoginAndRegisterViewController */,
@@ -271,6 +275,15 @@
 				10900C7C1D6ECBF60077A594 /* AdDetailViewController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		10900C7E1D6EE2D40077A594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10900C7F1D6EE2F00077A594 /* RGBColor.h */,
+				10900C801D6EE2F00077A594 /* RGBColor.m */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		10DC80FB1D66D87100B2108D /* TabBarController */ = {
@@ -521,6 +534,7 @@
 				10DC81001D66D8FC00B2108D /* BaseViewController.m in Sources */,
 				105FC8C11D65B6D9002AB976 /* AppDelegate.m in Sources */,
 				1056A24C1D6AF8940070486F /* RegisterViewController.m in Sources */,
+				10900C811D6EE2F00077A594 /* RGBColor.m in Sources */,
 				10DC81101D66DA0400B2108D /* TravelMallViewController.m in Sources */,
 				105FC8BE1D65B6D9002AB976 /* main.m in Sources */,
 				103B96011D6D948200971170 /* HTTPRequestManager.m in Sources */,

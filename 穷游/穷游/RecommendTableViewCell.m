@@ -12,10 +12,25 @@
 @interface RecommendTableViewCell ()<AdBannerViewDelegate>
 
 @property (nonatomic, strong) AdBannerView *adBannerView;
+@property (nonatomic, strong) UIButton     *searchButton;
 
 @end
 
 @implementation RecommendTableViewCell
+
+- (UIButton *)searchButton {
+    
+    if (!_searchButton) {
+        _searchButton                    = [[UIButton alloc] initForAutoLayout];
+        _searchButton.layer.cornerRadius = 4;
+        _searchButton.layer.borderWidth  = 1;
+        _searchButton.layer.borderColor  = MAINCOLOR.CGColor;
+        _searchButton.clipsToBounds      = YES;
+        _searchButton.backgroundColor    = [UIColor clearColor];
+        _searchButton.titleLabel.font    = [UIFont systemFontOfSize:13];
+    }
+    return _searchButton;
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -41,6 +56,17 @@
     }
     self.adBannerView = [[AdBannerView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 200) Delegate:self andImageViewArray:imageViewArray andNameArray:nil];
     [self.contentView addSubview:self.adBannerView];
+    
+    [self.contentView addSubview:self.searchButton];
+    [_searchButton autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.adBannerView withOffset:10];
+    [_searchButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:10];
+    [_searchButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];
+    [_searchButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
+    
+    [_searchButton setTitle:model.keyword forState:UIControlStateNormal];
+    [_searchButton setTitle:model.keyword forState:UIControlStateHighlighted];
+    [_searchButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [_searchButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
 }
 
 #pragma mark AdBannerViewDelegate

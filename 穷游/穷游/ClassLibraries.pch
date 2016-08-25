@@ -13,6 +13,10 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 /**
+ * 主色调
+ */
+#define MAINCOLOR [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1]
+/**
  *  屏幕宽度和高度
  */
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
@@ -25,6 +29,7 @@
 #import "Mantle.h"                    // JSON CHANGE INTO MODEL
 #import "UIImageView+WebCache.h"
 #import "UIScrollView+EmptyDataSet.h" // EMPTY DATA SET
+#import "RGBColor.h"
 /**
  *  Request URL
  */
