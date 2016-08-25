@@ -20,9 +20,11 @@
 /**
  *  Third Part Library
  */
-#import "PureLayout.h"      // AUTO LAYOUT
-#import "AFNetworking.h"    // REQUEST DATA
-#import "Mantle.h"          // JSON CHANGE INTO MODEL
+#import "PureLayout.h"                // AUTO LAYOUT
+#import "AFNetworking.h"              // REQUEST DATA
+#import "Mantle.h"                    // JSON CHANGE INTO MODEL
+#import "UIImageView+WebCache.h"
+#import "UIScrollView+EmptyDataSet.h" // EMPTY DATA SET
 /**
  *  Request URL
  */

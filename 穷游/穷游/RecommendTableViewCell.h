@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RecommendModel.h"
+
+@protocol RecommendTableViewCellDelegate <NSObject>
+
+- (void)adBannerViewBeClickedAndMoveToDetailViewControllerWith:(int)index;
+
+@end
 
 @interface RecommendTableViewCell : UITableViewCell
+
+@property (nonatomic, strong) id <RecommendTableViewCellDelegate> delegate;
+
+- (void)configureCellWithModel:(RecommendModel *)model andIndexPath:(NSIndexPath *)indexPath;
 
 @end
