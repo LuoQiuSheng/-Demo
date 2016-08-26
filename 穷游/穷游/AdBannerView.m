@@ -28,8 +28,8 @@
 @synthesize indicatorWidth = _indicatorWidth;
 @synthesize timer = _timer;
 @synthesize pageControl = _pageControl;
-#pragma mark --setter&getter
 
+#pragma mark --setter&getter
 - (NSMutableArray *)bannerImageViewArray
 {
     if(!_bannerImageViewArray){

@@ -111,13 +111,16 @@
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 1;
+    return [_recommentModel.entry count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     RecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RECOMMENDCELL];
     cell.delegate                = self;
+    while ([cell.contentView.subviews lastObject] != nil) {
+        [[cell.contentView.subviews lastObject] removeFromSuperview];
+    }
     [cell configureCellWithModel:_recommentModel andIndexPath:indexPath];
     return cell;
 }
