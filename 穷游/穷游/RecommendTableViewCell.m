@@ -16,8 +16,8 @@
 
 @property (nonatomic, strong) UIImageView  *detailCellImageView;
 @property (nonatomic, strong) UILabel      *detailCellType;
-@property (nonatomic, strong) UIImageView  *detailCellAutherIcon;
-@property (nonatomic, strong) UILabel      *detailCellName;
+@property (nonatomic, strong) UIImageView  *detailCellAuthorIcon;
+@property (nonatomic, strong) UILabel      *detailCellAuthorName;
 @property (nonatomic, strong) UILabel      *detailCellTitle;
 @property (nonatomic, strong) UILabel      *detailCellContent;
 @property (nonatomic, strong) UIImageView  *detailCellIcon;
@@ -63,33 +63,36 @@
     return _detailCellType;
 }
 
-- (UIImageView *)detailCellAutherIcon {
+- (UIImageView *)detailCellAuthorIcon {
     
-    if (!_detailCellAutherIcon) {
-        _detailCellAutherIcon                    = [[UIImageView alloc] initForAutoLayout];
-        _detailCellAutherIcon.clipsToBounds      = YES;
-        _detailCellAutherIcon.layer.cornerRadius = _detailCellAutherIcon.frame.size.width / 2;
-        _detailCellAutherIcon.layer.borderWidth  = 0.5;
-        _detailCellAutherIcon.layer.borderColor  = [RGBColor colorWithHexString:@"#F0F0F0"].CGColor;
+    if (!_detailCellAuthorIcon) {
+        _detailCellAuthorIcon                    = [[UIImageView alloc] initForAutoLayout];
+        _detailCellAuthorIcon.clipsToBounds      = YES;
+        _detailCellAuthorIcon.layer.cornerRadius = 30;
+        _detailCellAuthorIcon.layer.borderWidth  = 0.5;
+        _detailCellAuthorIcon.layer.borderColor  = [RGBColor colorWithHexString:@"#F0F0F0"].CGColor;
     }
-    return _detailCellAutherIcon;
+    return _detailCellAuthorIcon;
 }
 
-- (UILabel *)detailCellName {
+- (UILabel *)detailCellAuthorName {
     
-    if (!_detailCellName) {
-        _detailCellName           = [[UILabel alloc] initForAutoLayout];
-        _detailCellName.textColor = [UIColor lightGrayColor];
-        _detailCellName.font      = [UIFont systemFontOfSize:13];
+    if (!_detailCellAuthorName) {
+        _detailCellAuthorName               = [[UILabel alloc] initForAutoLayout];
+        _detailCellAuthorName.textColor     = [UIColor lightGrayColor];
+        _detailCellAuthorName.font          = [UIFont systemFontOfSize:13];
+        _detailCellAuthorName.textAlignment = NSTextAlignmentCenter;
     }
-    return _detailCellName;
+    return _detailCellAuthorName;
 }
 
 - (UILabel *)detailCellTitle {
     
     if (!_detailCellTitle) {
-        _detailCellTitle           = [[UILabel alloc] initForAutoLayout];
-        _detailCellTitle.textColor = [UIColor blackColor];
+        _detailCellTitle               = [[UILabel alloc] initForAutoLayout];
+        _detailCellTitle.textColor     = [UIColor blackColor];
+        _detailCellTitle.textAlignment = NSTextAlignmentCenter;
+        _detailCellTitle.numberOfLines = 0;
     }
     return _detailCellTitle;
 }
@@ -97,8 +100,10 @@
 - (UILabel *)detailCellContent {
     
     if (!_detailCellContent) {
-        _detailCellContent           = [[UILabel alloc] initForAutoLayout];
-        _detailCellContent.textColor = [UIColor lightGrayColor];
+        _detailCellContent               = [[UILabel alloc] initForAutoLayout];
+        _detailCellContent.textColor     = [UIColor lightGrayColor];
+        _detailCellContent.textAlignment = NSTextAlignmentCenter;
+        _detailCellContent.numberOfLines = 0;
     }
     return _detailCellContent;
 }
@@ -165,6 +170,45 @@
         [_detailCellType autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [_detailCellType autoSetDimension:ALDimensionHeight toSize:28];
         _detailCellType.text = [NSString stringWithFormat:@"  %@  ",[dictionary objectForKey:@"column"]];
+        
+        NSDictionary *authorDictionary = [dictionary objectForKey:@"author"];
+        if ([authorDictionary objectForKey:@"pic"] != nil || [authorDictionary objectForKey:@"username"] != nil) {
+            
+            [self.contentView addSubview:self.detailCellAuthorIcon];
+            [_detailCellAuthorIcon autoAlignAxisToSuperviewAxis:ALAxisVertical];
+            [_detailCellAuthorIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:120];
+            [_detailCellAuthorIcon autoSetDimension:ALDimensionWidth toSize:60];
+            [_detailCellAuthorIcon autoSetDimension:ALDimensionHeight toSize:60];
+            [_detailCellAuthorIcon sd_setImageWithURL:[NSURL URLWithString:[authorDictionary objectForKey:@"pic"]] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
+            
+            [self.contentView addSubview:self.detailCellAuthorName];
+            [_detailCellAuthorName autoAlignAxisToSuperviewAxis:ALAxisVertical];
+            [_detailCellAuthorName autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.detailCellAuthorIcon withOffset:8];
+            _detailCellAuthorName.text = [authorDictionary objectForKey:@"username"];
+        }
+        
+        [self.contentView addSubview:self.detailCellTitle];
+        [_detailCellTitle autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:8];
+        [_detailCellTitle autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:8];
+        if ([authorDictionary objectForKey:@"pic"] != nil || [authorDictionary objectForKey:@"username"] != nil) {
+            [_detailCellTitle autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_detailCellAuthorName withOffset:8];
+        }else {
+            [_detailCellTitle autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_detailCellImageView withOffset:8];
+        }
+        _detailCellTitle.text = [dictionary objectForKey:@"title"];
+        
+        [self.contentView addSubview:self.detailCellContent];
+        [_detailCellContent autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:8];
+        [_detailCellContent autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:8];
+        [_detailCellContent autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:_detailCellTitle withOffset:8];
+        _detailCellContent.text = [dictionary objectForKey:@"subject"];
+        
+        [self.contentView addSubview:self.detailCellIcon];
+        [_detailCellIcon autoAlignAxisToSuperviewAxis:ALAxisVertical];
+        [_detailCellIcon autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
+        [_detailCellIcon autoSetDimension:ALDimensionWidth toSize:50];
+        [_detailCellIcon autoSetDimension:ALDimensionHeight toSize:50];
+        [_detailCellIcon sd_setImageWithURL:[dictionary objectForKey:@"icon_url"] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
     }
 }
 

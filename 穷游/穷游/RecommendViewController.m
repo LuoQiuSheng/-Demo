@@ -121,6 +121,7 @@
     while ([cell.contentView.subviews lastObject] != nil) {
         [[cell.contentView.subviews lastObject] removeFromSuperview];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell configureCellWithModel:_recommentModel andIndexPath:indexPath];
     return cell;
 }
@@ -128,7 +129,33 @@
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 260;
+    CGFloat height;
+    
+    if (indexPath.row == 0) {
+        height = 260;
+    }else {
+        
+        NSDictionary *dictionary       = [_recommentModel.entry objectAtIndex:indexPath.row - 1];
+        NSDictionary *authorDictionary = [dictionary objectForKey:@"author"];
+        NSString     *titleString      = [dictionary objectForKey:@"title"];
+        NSString     *contentString    = [dictionary objectForKey:@"subject"];
+        
+        height = 240;
+        if ([authorDictionary objectForKey:@"pic"] != nil || [authorDictionary objectForKey:@"username"] != nil) {
+            height += 60;
+        }
+        if (titleString != nil) {
+            NSDictionary *attribute = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
+            CGSize titileSize = [titleString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+            height += titileSize.height;
+        }
+        if (contentString != nil) {
+            NSDictionary *attribute = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
+            CGSize contentSize = [contentString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+            height += contentSize.height;
+        }
+    }
+    return height;
 }
 
 #pragma mark RecommendTableViewCellDelegate
