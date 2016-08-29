@@ -27,10 +27,10 @@
 #import "PureLayout.h"                // AUTO LAYOUT
 #import "AFNetworking.h"              // REQUEST DATA
 #import "Mantle.h"                    // JSON CHANGE INTO MODEL
-#import "UIImageView+WebCache.h"
+#import "UIImageView+WebCache.h"      // IMAGE HANDLE
 #import "UIScrollView+EmptyDataSet.h" // EMPTY DATA SET
-#import "RGBColor.h"
-#import "MJRefresh.h"
+#import "RGBColor.h"                  // COLOR CHANGE
+#import "MJRefresh.h"                 // REFRESH
 /**
  *  Request URL
  */

@@ -67,11 +67,16 @@
         vc.title = dictionary[titleKey];
         
         BaseNavigationController *navigationController = [[BaseNavigationController alloc] initWithRootViewController:vc];
+        
         UITabBarItem *item = navigationController.tabBarItem;
-        item.title = dictionary[titleKey];
-        item.image = [UIImage imageNamed:dictionary[imageKey]];
+        item.title         = dictionary[titleKey];
+        item.image         = [UIImage imageNamed:dictionary[imageKey]];
         item.selectedImage = [[UIImage imageNamed:dictionary[selImageKey]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+//        [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]} forState:UIControlStateNormal];
         [item setTitleTextAttributes:@{NSForegroundColorAttributeName:themeColor} forState:UIControlStateSelected];
+        
+        NSLog(@"idx:%lu",(unsigned long)idx);
         [self addChildViewController:navigationController];
     }];
 }

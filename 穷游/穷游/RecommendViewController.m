@@ -85,7 +85,7 @@
         }
         
         _recommentModel = [MTLJSONAdapter modelOfClass:[RecommendModel class] fromJSONDictionary:model error:nil];
-        [_recommendArray addObject:_recommentModel];
+        [_recommendArray addObject:_recommentModel.entry];
         
         NSLog(@"%@",_recommentModel);
         [self registerUITableViewCell];
@@ -293,12 +293,14 @@
     NSLog(@"刷新数据");
     _page = 1;
     [self getDataFromNetwork];
+    [self.recommendTableView.mj_header endRefreshing]; // TEST
 }
 
 - (void)loadMoreData {
     NSLog(@"加载更多数据");
     _page ++;
     [self getDataFromNetwork];
+    [self.recommendTableView.mj_footer endRefreshing]; // TEST
 }
 
 - (void)didReceiveMemoryWarning {
