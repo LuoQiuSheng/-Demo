@@ -141,7 +141,7 @@
 		103B95F61D6D7EE000971170 /* RecommendViewController */ = {
 			isa = PBXGroup;
 			children = (
-				10900C7A1D6EC95E0077A594 /* ViewController */,
+				10900C7A1D6EC95E0077A594 /* AdDetailViewController */,
 				10900C761D6EC5D40077A594 /* View */,
 				103B96031D6DB55700971170 /* Model */,
 				103B95F71D6D7FB100971170 /* Cell */,
@@ -268,13 +268,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		10900C7A1D6EC95E0077A594 /* ViewController */ = {
+		10900C7A1D6EC95E0077A594 /* AdDetailViewController */ = {
 			isa = PBXGroup;
 			children = (
 				10900C7B1D6ECBF60077A594 /* AdDetailViewController.h */,
 				10900C7C1D6ECBF60077A594 /* AdDetailViewController.m */,
 			);
-			name = ViewController;
+			name = AdDetailViewController;
 			sourceTree = "<group>";
 		};
 		10900C7E1D6EE2D40077A594 /* Frameworks */ = {

@@ -49,7 +49,7 @@
     [_adDetailWebView autoPinEdgeToSuperviewEdge:ALEdgeTop];
     [_adDetailWebView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
     [_adDetailWebView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-    [_adDetailWebView autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:46];
+    [_adDetailWebView autoPinEdgeToSuperviewEdge:ALEdgeBottom];
 }
 
 - (void)didReceiveMemoryWarning {

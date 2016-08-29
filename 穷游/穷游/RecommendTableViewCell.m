@@ -136,7 +136,7 @@
             imageView.contentMode            = UIViewContentModeScaleAspectFill;
             imageView.clipsToBounds          = YES;
             imageView.userInteractionEnabled = YES;
-            [imageView sd_setImageWithURL:[NSURL URLWithString:[dictionary objectForKey:@"photo"]]];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:[dictionary objectForKey:@"photo"]] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
             
             [imageViewArray addObject:imageView];
         }
@@ -162,8 +162,12 @@
         [_detailCellImageView autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [_detailCellImageView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [_detailCellImageView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [_detailCellImageView autoSetDimension:ALDimensionHeight toSize:150];
-        [_detailCellImageView sd_setImageWithURL:[NSURL URLWithString:[dictionary objectForKey:@"cover"]] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
+        [_detailCellImageView autoSetDimension:ALDimensionHeight toSize:165];
+        
+        NSString *urlString = [dictionary objectForKey:@"cover"];
+        NSRange range       = [urlString rangeOfString:@"?"];
+        NSString *string    = [urlString substringWithRange:NSMakeRange(0, range.location)];
+        [_detailCellImageView sd_setImageWithURL:[NSURL URLWithString:string] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
         
         [self.contentView addSubview:self.detailCellType];
         [_detailCellType autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:10];
@@ -176,7 +180,7 @@
             
             [self.contentView addSubview:self.detailCellAuthorIcon];
             [_detailCellAuthorIcon autoAlignAxisToSuperviewAxis:ALAxisVertical];
-            [_detailCellAuthorIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:120];
+            [_detailCellAuthorIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:135];
             [_detailCellAuthorIcon autoSetDimension:ALDimensionWidth toSize:60];
             [_detailCellAuthorIcon autoSetDimension:ALDimensionHeight toSize:60];
             [_detailCellAuthorIcon sd_setImageWithURL:[NSURL URLWithString:[authorDictionary objectForKey:@"pic"]] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
@@ -205,10 +209,10 @@
         
         [self.contentView addSubview:self.detailCellIcon];
         [_detailCellIcon autoAlignAxisToSuperviewAxis:ALAxisVertical];
-        [_detailCellIcon autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:10];
+        [_detailCellIcon autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
         [_detailCellIcon autoSetDimension:ALDimensionWidth toSize:50];
         [_detailCellIcon autoSetDimension:ALDimensionHeight toSize:50];
-        [_detailCellIcon sd_setImageWithURL:[dictionary objectForKey:@"icon_url"] placeholderImage:[UIImage imageNamed:@"bg_detail_cover_default"]];
+        [_detailCellIcon sd_setImageWithURL:[dictionary objectForKey:@"icon_url"]];
     }
 }
 

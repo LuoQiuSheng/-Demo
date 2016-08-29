@@ -26,6 +26,7 @@
 @property (nonatomic, strong) UITableView    *recommendTableView;
 @property (nonatomic, strong) NSMutableArray *recommendArray;     // 数据源
 @property (nonatomic, strong) RecommendModel *recommentModel;
+@property (nonatomic, assign) NSInteger       page;
 
 @end
 
@@ -44,6 +45,8 @@
         _recommendTableView.emptyDataSetDelegate           = self;
         _recommendTableView.tableFooterView                = [UIView new];
         _recommendTableView.backgroundColor                = [RGBColor colorWithHexString:@"#F0F0F0"];
+        _recommendTableView.mj_header                      = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+        _recommendTableView.mj_footer                      = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     }
     return _recommendTableView;
 }
@@ -69,22 +72,25 @@
 - (void)initializeDataSource {
     
     _recommendArray = [[NSMutableArray alloc] init];
+    _page = 1;
 }
 
 #pragma mark 获取网络数据
 - (void)getDataFromNetwork {
     
-    [[HTTPRequestManager shareIntance] GETDataFromNetworkWithURL:RECOMMENDVIEWCONTROLLER
-                                                         andPage:1
-                                                      andSuccess:^(HTTPRequestManager *manager, id model) {
+    [[HTTPRequestManager shareIntance] GETDataFromNetworkWithURL:RECOMMENDVIEWCONTROLLER andPage:_page andSuccess:^(HTTPRequestManager *manager, id model) {
         
-        _recommentModel = [MTLJSONAdapter modelOfClass:[RecommendModel class]
-                                                   fromJSONDictionary:model
-                                                                error:nil];
+        if (_page == 1) {
+            [_recommendArray removeAllObjects];
+        }
+        
+        _recommentModel = [MTLJSONAdapter modelOfClass:[RecommendModel class] fromJSONDictionary:model error:nil];
+        [_recommendArray addObject:_recommentModel];
+        
         NSLog(@"%@",_recommentModel);
         [self registerUITableViewCell];
         [self initializeUIInterface];
-                                                        
+        
     } andFailed:^(HTTPRequestManager *manager, id model) {
         
         NSLog(@"recomment view controller error:%@",[model localizedDescription]);
@@ -118,10 +124,12 @@
 
     RecommendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RECOMMENDCELL];
     cell.delegate                = self;
+    cell.selectionStyle          = UITableViewCellSelectionStyleNone;
+    
     while ([cell.contentView.subviews lastObject] != nil) {
         [[cell.contentView.subviews lastObject] removeFromSuperview];
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     [cell configureCellWithModel:_recommentModel andIndexPath:indexPath];
     return cell;
 }
@@ -146,13 +154,13 @@
         }
         if (titleString != nil) {
             NSDictionary *attribute = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
-            CGSize titileSize = [titleString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
-            height += titileSize.height;
+            CGSize titileSize       = [titleString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+            height                 += titileSize.height;
         }
         if (contentString != nil) {
             NSDictionary *attribute = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
-            CGSize contentSize = [contentString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
-            height += contentSize.height;
+            CGSize contentSize      = [contentString boundingRectWithSize:CGSizeMake(SCREENWIDTH - 16, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:attribute context:nil].size;
+            height                 += contentSize.height;
         }
     }
     return height;
@@ -278,6 +286,19 @@
 {
     NSLog(@"emptyDataSetDidTapButton");
     // Do something
+}
+
+#pragma mark MJRefresh
+- (void)loadNewData {
+    NSLog(@"刷新数据");
+    _page = 1;
+    [self getDataFromNetwork];
+}
+
+- (void)loadMoreData {
+    NSLog(@"加载更多数据");
+    _page ++;
+    [self getDataFromNetwork];
 }
 
 - (void)didReceiveMemoryWarning {

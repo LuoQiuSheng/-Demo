@@ -30,6 +30,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIScrollView+EmptyDataSet.h" // EMPTY DATA SET
 #import "RGBColor.h"
+#import "MJRefresh.h"
 /**
  *  Request URL
  */
