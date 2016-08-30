@@ -10,24 +10,26 @@
 
 @interface AdBannerView ()<UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIView *indicator;
-@property (nonatomic ,strong) UILabel *nameLabel;
+@property (nonatomic, strong) UIScrollView  *scrollView;
+@property (nonatomic, strong) UIView        *indicator;
+@property (nonatomic ,strong) UILabel       *nameLabel;
 @property (nonatomic, strong) UIPageControl *pageControl;
-@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) NSTimer       *timer;
+
 @property float indicatorWidth;
 
 @end
 
 @implementation AdBannerView
-@synthesize delegate = _delegate;
-@synthesize scrollView = _scrollView;
-@synthesize nameLabel = _nameLabel;
-@synthesize indicator = _indicator;
+
+@synthesize delegate             = _delegate;
+@synthesize scrollView           = _scrollView;
+@synthesize nameLabel            = _nameLabel;
+@synthesize indicator            = _indicator;
 @synthesize bannerImageViewArray = _bannerImageViewArray;
-@synthesize indicatorWidth = _indicatorWidth;
-@synthesize timer = _timer;
-@synthesize pageControl = _pageControl;
+@synthesize indicatorWidth       = _indicatorWidth;
+@synthesize timer                = _timer;
+@synthesize pageControl          = _pageControl;
 
 #pragma mark --setter&getter
 - (NSMutableArray *)bannerImageViewArray
@@ -136,11 +138,9 @@
     [_scrollView scrollRectToVisible:rect animated:YES];
 }
 
-
 #pragma mark --init Ffff
 - (AdBannerView *)initWithFrame:(CGRect)frame Delegate:(id<AdBannerViewDelegate>)delegate andImageViewArray:(NSArray *)imageViewArray andNameArray:(NSArray *)nameArray
 {
-    
     self = [super initWithFrame:frame];
     if(self)
     {
@@ -192,6 +192,7 @@
      }
     return self;
 }
+
 #pragma mark---停止自动轮播
 -(void)longPressToDo :(UILongPressGestureRecognizer*)gesture
 {
